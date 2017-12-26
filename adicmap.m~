@@ -1,9 +1,9 @@
-function [AInt, AFrac]  = adicmap(X, base, nCols)
-
+function [A_int, A_frac]  = adicmap(X, base, nCols)
 nRows = length(X);
-AZero = zeros(nRows, nCols);
+A = zeros(nRows, nCols, 2);
 
-ACurrent = AZero;
+page = 1;
+ACurrent = A(:,:,page);
 ASlice = ACurrent(1,:);
 for iNum = 1:nRows
     naryVector = ASlice;
@@ -13,13 +13,15 @@ for iNum = 1:nRows
     naryVector(1:outLen) = out(1:outLen);
     ACurrent(iNum,:) = naryVector;
 end %for iNum 
-AInt = ACurrent;
+A(:,:,page) = ACurrent;
 
-ACurrent = AZero;
+page = 2;
+ACurrent = A(:,:,page);
 for iDenom = 1:nRows
     ACurrent(iDenom,:) = frac2nary(1, X(iDenom), base, nCols);
 end % for iDenom
-AFrac = ACurrent;
+A(:,:,page) = ACurrent;
 
+A_int = 
 
 

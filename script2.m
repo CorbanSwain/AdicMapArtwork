@@ -12,9 +12,6 @@ for iBase = 2:10
     if ~loadVar % FIXME
         %X = floor(base .^ ((1:n) ./ 5));
         arr = adicmap(1:n, base, n);
-        
-        
-
         save(['AdicMapData/' fName '.mat'], 'arr');
     else
         load(['AdicMapData/' fName '.mat'], 'arr');
