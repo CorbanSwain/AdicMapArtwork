@@ -9,7 +9,6 @@ sizes = round(sizes);
 dataDir = 'AdicMapData';
 namingFormat = 'Base%03d-%04dX%04d';
 
-
 %% Main Script
 CNSUtils.FigureBuilder.setDefaults;
 DATA_EXT = '.mat';

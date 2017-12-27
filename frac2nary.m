@@ -13,13 +13,13 @@ for iDigit = 1:length
     potentialAdd = val * base;
     for iAdd = 1:(eval(base) - 1)
         potentialAdd = potentialAdd - val;
-        if potentialAdd < (delta + tol)
+        if potentialAdd <= delta
             delta = delta - potentialAdd;
-            out(iDigit) = base - iAdd;
+            out(iDigit) = eval(base) - iAdd;
             break
         end 
     end
-    if delta < tol
+    if delta <= tol
         break
     end
     exponent = exponent - sym(1);
