@@ -1,15 +1,15 @@
 tileSize = [100, 100];
 numSize = [81, 81];
-base = 3;
+base = 11;
 dirname = 'AdicMapData';
-fileGlob = dir(sprintf([dirname, filesep, 'Base%03d*.mat'], base));
+fileGlob = dir(sprintf([dirname, '/' 'Base%03d*.mat'], base));
 load([fileGlob.folder, filesep, fileGlob.name], 'AFrac', 'AInt');
 
 AInt = AInt(1:numSize(1), 1:numSize(2));
 AFrac = AFrac(1:numSize(1), 1:numSize(2));
 
 tiles = zeros([tileSize, 1, (base - 1)]);
-margin = 30;
+margin = 5;
 tiles(:,:,:,1) = circleim(tileSize(1) - (2 * margin), margin);
 margin = 5;
 tiles(:,:,:,2) = circleim(tileSize(1) - (2 * margin), margin);
@@ -30,7 +30,7 @@ tileSize = size(doubleTriTile(1, 1, 1, htri, margin));
 numSize = [27, 51];
 base = 3;
 dirname = 'AdicMapData';
-fileGlob = dir(sprintf([dirname, filesep, 'Base%03d*.mat'], base));
+fileGlob = dir(sprintf([dirname, '/', 'Base%03d*.mat'], base));
 load([fileGlob.folder, filesep, fileGlob.name], 'AFrac', 'AInt');
 
 AInt = AInt(1:numSize(1), 1:numSize(2));

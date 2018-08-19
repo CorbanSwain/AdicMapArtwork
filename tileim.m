@@ -4,9 +4,8 @@ if nargin < 3
     flip = false;
 end
 
-if flip
-    parity = false; 
-end
+parity = ~flip;
+
 
 tileSize = [size(tiles, 1), size(tiles, 2)];
 sourceSize = size(source);
